@@ -3,7 +3,7 @@
 namespace App\Services;
 
 use App\Exceptions\NoBeansException;
-use SoConnect\Coffee\NoWaterException;
+use App\Exceptions\NoWaterException;
 
 /**
  * A single espresso uses 1 spoon of beans and 0.05 litres of water
