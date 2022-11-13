@@ -1,5 +1,4 @@
-<?php
-declare(strict_types = 1);
+<?php declare(strict_types = 1);
 
 namespace App\Gateways;
 
@@ -29,6 +28,6 @@ abstract class AbstractContainerFilesystemGateway implements ContainerGatewayInt
 
     private function getInfoFilePath(): string
     {
-        return storage_path('data').DIRECTORY_SEPARATOR.$this->filename;
+        return resource_path('data').DIRECTORY_SEPARATOR.$this->filename;
     }
 }

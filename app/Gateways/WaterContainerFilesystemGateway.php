@@ -4,7 +4,7 @@ namespace App\Gateways;
 
 class WaterContainerFilesystemGateway extends AbstractContainerFilesystemGateway
 {
-    private const WATER_INFO_FILENAME = 'beans_container.json';
+    private const WATER_INFO_FILENAME = 'water_container.json';
 
     public function __construct()
     {
