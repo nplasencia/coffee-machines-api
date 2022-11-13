@@ -18,7 +18,7 @@ class WaterContainerService implements WaterContainer
     {
         $waterContainer = $this->getWaterContainerObject();
 
-        $waterContainer->currentWater += $litres;
+        $waterContainer->currentWater = round($waterContainer->currentWater + $litres, 2);
         if ($waterContainer->currentWater > $waterContainer->maxCapacity) {
             throw new ContainerFullException();
         }
@@ -30,7 +30,7 @@ class WaterContainerService implements WaterContainer
     {
         $waterContainer = $this->getWaterContainerObject();
 
-        $waterContainer->currentWater -= $litres;
+        $waterContainer->currentWater = round($waterContainer->currentWater - $litres, 2);
         if ($waterContainer->currentWater < 0) {
             return 0;
         }
