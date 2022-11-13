@@ -49,6 +49,24 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Throwable $exception)
     {
+        if ($exception instanceof NoBeansException) {
+            return response()->json([
+                'error' => [
+                    'title' => 'No enough beans',
+                    'message' => 'Refill beans container'
+                ]
+            ], 400);
+        }
+
+        if ($exception instanceof NoWaterException) {
+            return response()->json([
+                'error' => [
+                    'title' => 'No enough water',
+                    'message' => 'Refill water container'
+                ]
+            ], 400);
+        }
+
         return parent::render($request, $exception);
     }
 }

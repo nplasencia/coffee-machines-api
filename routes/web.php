@@ -16,3 +16,9 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+
+$router->group(['prefix' => 'api/v1'], function () use ($router) {
+    $router->post('makeEspresso', ['uses' => 'CoffeeMachineController@makeEspresso']);
+    $router->post('makeDoubleEspresso', ['uses' => 'CoffeeMachineController@makeDoubleEspresso']);
+    $router->get('machineStatus', ['uses' => 'CoffeeMachineController@getMachineStatus']);
+});
